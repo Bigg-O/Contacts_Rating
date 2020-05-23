@@ -45,6 +45,14 @@
         "Seniority_Levels" : {
             "executive": {
                 "chief" : true,
+                "ceo" : true,
+                "coo" : true,
+                "cfo" : true,
+                "cio" : true,
+                "cso" : true,
+                "cco" : true,
+                "cmo" : true,
+                "cto" : true,
                 "president" : true,
                 "partner" : true,
                 "chairman" : true
