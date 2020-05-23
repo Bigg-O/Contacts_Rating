@@ -1,23 +1,28 @@
+const evaluations = require("../db/evaluations.json")
 
-exports.evaluateContacts = (contacts, updatedContact, evaluations) => {
+const evaluatedContacts = []
+
+exports.evaluateContacts = contacts => {
     for (const contact of contacts) {
 
-        const washedTitle = washTitle(contact.Name)
+        const washedTitle = washTitle(contact.Title)
         const rate = evaluate(washedTitle, contact["Company Size"])
 
-        updatedContact.push({
+        evaluatedContacts.push({
             "Name" : contact.Name,
             "Company" : contact.Company,
             "Title" : contact.Title,
             "Company Size" : contact["Company Size"],
             "Rate": rate
         })
-
     }
+
+    return evaluatedContacts
 }
 
+// Only keeps letters and numbers
 function washTitle(title) {
-    return title
+    return title.replace(/[^a-z0-9]/gi, '').toLowerCase();
 }
 
 function evaluate(title, size) {
