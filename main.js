@@ -1,14 +1,12 @@
-// Importing JSON files
+// JSON file
 const contacts = require("./db/contactList.json")
-const evaluations = require("./db/evaluations.json")
-// Importing modules
+// Modules
 const evaluate = require("./modules/evaluate")
 const makeJSON = require("./modules/makeJSON")
 
-const updatedContact = []
-main()
+exports.main = () => {
+    const fileName = "ratedContacts.json"
+    const ratedContact = evaluate.evaluateContacts(contacts)
 
-function main() {
-    evaluate.evaluateContacts(contacts, updatedContact, evaluations)
-    makeJSON.exportToJSON("ratedContacts.json", updatedContact)
+    makeJSON.exportToJSON(fileName, ratedContact)
 }

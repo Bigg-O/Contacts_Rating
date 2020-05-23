@@ -7,7 +7,7 @@ exports.exportToJSON = (fileName, data) => {
             console.log("ERROR:", err)
             throw err
         } else {
-            console.log("Succesfully created new file ratedConracts.json")
+            console.log(`Succesfully created new file "${fileName}"`)
         }
     })
 }
