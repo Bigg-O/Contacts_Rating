@@ -1,37 +1,14 @@
-const fs = require("fs")
-// JSON files
+// Importing JSON files
 const contacts = require("./db/contactList.json")
 const evaluations = require("./db/evaluations.json")
+// Importing modules
+const evaluate = require("./modules/evaluate")
+const makeJSON = require("./modules/makeJSON")
 
+const updatedContact = []
+main()
 
-
-// Creating ratedContacts.json if it doesn't exist
-function createDB() {
-    if (!fs.existsSync("./ratedContacts.json")) {
-        fs.writeFile("ratedContacts.json", JSON.stringify([]), err => {
-            if (err) {
-                console.log("ERROR:", err)
-                throw err
-            } else {
-                console.log("Succesfully created new file ratedConracts.json")
-            }
-        })
-    }
+function main() {
+    evaluate.evaluateContacts(contacts, updatedContact, evaluations)
+    makeJSON.exportToJSON("ratedContacts.json", updatedContact)
 }
-
-// Importing ratedContacts.json
-let response = fs.readFileSync("./ratedContacts.json")
-let ratedCont = JSON.parse(response)
-console.log(ratedCont)
-
-// contacts.forEach( contact => {
-//     // const updatedContact = {
-//     //     "Name" : contact.Name,
-//     //     "Company" : contact.Company,
-//     //     "Title" : contact.Title,
-//     //     "Company Size" : contact["Company Size"],
-//     //     "Rate": 0
-//     // }
-
-//     ratedContacts.push("updatedContact")
-// })
