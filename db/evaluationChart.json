@@ -76,11 +76,11 @@
         "manager": 0.25
     },
     "Job_Role_Preference": {
-        "public relations": 4,
-        "communication": 4,
-        "marketing": 2,
-        "optimization": 2,
-        "media": 2,
-        "design": 2
+        "publicrelation": 3,
+        "communication": 3,
+        "marketing": 1,
+        "optimization": 1,
+        "media": 1,
+        "design": 1
     }
 }
