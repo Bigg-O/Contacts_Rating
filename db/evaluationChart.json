@@ -3,14 +3,6 @@
         "small_max": 50,
         "large_min": 1001
     },
-    "Job_Role_Preference": {
-        "public relations": 5,
-        "communication": 5,
-        "marketing": 1,
-        "optimization": 1,
-        "Media": 1,
-        "Design": 1
-    },
     "Seniority_Levels": {
         "executive": {
             "chief": true,
@@ -53,14 +45,6 @@
             "intern" : true
         }
     },
-
-    "Bonus_Titles": {
-        "senior": 0.333,
-        "sr.": 0.333,
-        "director": 1,
-        "head": 0.667,
-        "manager": 0.333
-    },
     "Seniority_Level_Preference_by_Company_Size": {
         "small": {
             "executive": 5,
@@ -83,5 +67,20 @@
             "mid-entry": 2,
             "entry": 1
         }
+    },
+    "Bonus_Titles": {
+        "senior": 0.25,
+        "sr": 0.25,
+        "director": 0.75,
+        "head": 0.5,
+        "manager": 0.25
+    },
+    "Job_Role_Preference": {
+        "public relations": 4,
+        "communication": 4,
+        "marketing": 2,
+        "optimization": 2,
+        "media": 2,
+        "design": 2
     }
 }
