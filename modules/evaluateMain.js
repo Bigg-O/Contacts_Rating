@@ -1,3 +1,4 @@
+// JSON file
 const EVAULATION_CHART = require("../db/evaluationChart.json")
 // modules
 const evaluateBySLandCS = require("./evaluateBySeniorityLevelAndCompanySize")
@@ -6,6 +7,10 @@ const evaluateByJR = require("./evaluateByJobRole")
 // result
 const evaluatedContacts = []
 
+// Main Iteration Body
+// SL = Seniority Level, CS = Company Size, JR = Rob Role
+// rateBySLandCS is 3 if Seniority Level can't be defined by its title
+// rateBySLandCS and rateByJR are evaluated equally
 module.exports = contacts => {
     for (const contact of contacts) {
         const washedTitle = washTitle(contact.Title)
@@ -16,8 +21,6 @@ module.exports = contacts => {
         const rateByJR = evaluateByJR(washedTitle)
         const rate = Math.round((rateBySLandCS + rateByJR) / 2)
 
-        contact.rateBySLandCS = rateBySLandCS
-        contact.rateByJR = rateByJR
         contact.Rate = rate
         evaluatedContacts.push(contact)
     }
@@ -47,6 +50,7 @@ function getSeniorityLevel(title) {
             }
         }
     }
+    
     return null
 }
 

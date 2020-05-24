@@ -1,5 +1,7 @@
+// JSON file
 const EVALUATION_CHAT = require("../db/evaluationChart.json")
 
+// returns rate by looking for certain key words in title
 module.exports = (title) => {
     let rate = 1
     rate += addByKeyWords(title, "Job_Role_Preference", Object.keys(EVALUATION_CHAT.Job_Role_Preference))
