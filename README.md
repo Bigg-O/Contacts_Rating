@@ -1,6 +1,10 @@
 # Contacs Rating
 
-With given data of contacts, rating each contact 
+With given data of list of contacts that contains name, company size and title, this program will produce a new data file "ratedContacts.json" which will contain their ratings. Ratings are evaluated by three main factors 
+- Seniority level
+- Company size
+- Job Role
+
 
 - Developed a multi-layer relational data system on MERN Stack to handle state changes of the postings
 - Utilized JSON Web Tokens to store encrypted user information from the client-side to the cloud
@@ -8,25 +12,12 @@ With given data of contacts, rating each contact
 
 ## Getting Started
 
-You can directly access the app from "https://dareme.netlify.com"
-
-backend API from "URL"
-
-Frontend repository is available here: https://github.com/Bigg-O/DareMe_frontend
-
-## Deployment
-
-The app is deployed on [Netlify](https://www.netlify.com/)
-Backend is running on [Heroku](https://www.heroku.com/)
-Cloud is running on [MongoDB Atlas](https://www.mongodb.com/)
+You can simply run "node run.js" on your terminal. This will create "ratedContacts.json" in the current directory, which will contain the contact list with ratings.
 
 ## Built With
 
-- [MongoDB Atlas](https://www.mongodb.com/) - The database cloud used
-- [Express.js](https://expressjs.com/) - The web framework used
-- [React.js](https://reactjs.org/) - The frontend web library used
-- [Node.js](https://nodejs.org/en/) - Backend used
+- [Node.js](https://nodejs.org/en/)
 
-## Authors
+## Author
 
-- **Wookeun Song** - _Initial work_ - [Bigg-O](https://github.com/Bigg-O)
+- **Wookeun Oscar Song** - _Initial work_ - [Bigg-O](https://github.com/Bigg-O)
