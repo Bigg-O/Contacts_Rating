@@ -16,8 +16,6 @@ module.exports = contacts => {
         const rateByJR = evaluateByJR(washedTitle)
         const rate = Math.round((rateBySLandCS + rateByJR) / 2)
 
-        contact.rateBySLandCS = rateBySLandCS
-        contact.rateByJR = rateByJR
         contact.Rate = rate
         evaluatedContacts.push(contact)
     }
