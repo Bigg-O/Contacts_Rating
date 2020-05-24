@@ -12,10 +12,12 @@ module.exports = contacts => {
         const seniorityLevel = getSeniorityLevel(washedTitle)
         const companySize = getCompanySize(contact["Company Size"])
 
-        const rateBySLandCS = evaluateBySLandCS(seniorityLevel, companySize)
-        const rateByJR = evaluateByJR(washedTitle, seniorityLevel, rateBySLandCS)
+        const rateBySLandCS = evaluateBySLandCS(seniorityLevel, companySize) || 3
+        const rateByJR = evaluateByJR(washedTitle)
         const rate = Math.round((rateBySLandCS + rateByJR) / 2)
 
+        contact.rateBySLandCS = rateBySLandCS
+        contact.rateByJR = rateByJR
         contact.Rate = rate
         evaluatedContacts.push(contact)
     }
@@ -25,7 +27,7 @@ module.exports = contacts => {
 
 
 
-// =========== Sub-functions ===========
+// =========== local-functions ===========
 
 
 
@@ -45,7 +47,6 @@ function getSeniorityLevel(title) {
             }
         }
     }
-
     return null
 }
 

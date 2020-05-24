@@ -6,6 +6,7 @@ const makeJSON = require("./modules/makeJSON")
 
 module.exports = () => {
     const fileName = "ratedContacts.json"
-    const ratedContacts = evaluate(contacts)
+    let ratedContacts = evaluate(contacts)
+    ratedContacts = ratedContacts.sort((a,b) => b.Rate - a.Rate) 
     makeJSON(fileName, ratedContacts)
 }

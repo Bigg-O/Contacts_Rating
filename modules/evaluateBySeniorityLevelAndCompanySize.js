@@ -5,7 +5,7 @@ const EVALUATION_CHART = require("../db/evaluationChart.json")
 module.exports = (level, size) => {
     if (level) {
         return EVALUATION_CHART.Seniority_Level_Preference_by_Company_Size[size][level]
+    } else {
+        return null
     }
-    
-    return 3
 }
