@@ -11,6 +11,56 @@
         "Media": 1,
         "Design": 1
     },
+    "Seniority_Levels": {
+        "executive": {
+            "chief": true,
+            "ceo": true,
+            "coo": true,
+            "cfo": true,
+            "cio": true,
+            "cso": true,
+            "cco": true,
+            "cmo": true,
+            "cto": true,
+            "president": true,
+            "partner": true,
+            "chairman": true,
+            "founder" : true,
+            "cofounder" : true
+        },
+        "senior": {
+            "vice president": true,
+            "vp": true,
+            "senior": true,
+            "sr" : true
+        },
+        "mid": {
+            "director": true,
+            "head": true,
+            "manager": true,
+            "leader" : true
+        },
+        "mid-entry": {
+            "lead" : true,
+            "supervisor": true,
+            "coordinator": true,
+            "representative": true
+        },
+        "entry": {
+            "specialist": true,
+            "analyst": true,
+            "assistant": true,
+            "intern" : true
+        }
+    },
+
+    "Bonus_Titles": {
+        "senior": 0.333,
+        "sr.": 0.333,
+        "director": 1,
+        "head": 0.667,
+        "manager": 0.333
+    },
     "Seniority_Level_Preference_by_Company_Size": {
         "small": {
             "executive": 5,
@@ -33,46 +83,5 @@
             "mid-entry": 2,
             "entry": 1
         }
-    },
-    "Seniority_Levels": {
-        "executive": {
-            "chief": true,
-            "ceo": true,
-            "coo": true,
-            "cfo": true,
-            "cio": true,
-            "cso": true,
-            "cco": true,
-            "cmo": true,
-            "cto": true,
-            "president": true,
-            "partner": true,
-            "chairman": true
-        },
-        "senior": {
-            "vice president": true
-        },
-        "mid": {
-            "director": true,
-            "head": true,
-            "manager": true
-        },
-        "mid-entry": {
-            "supervisor": true,
-            "coordinator": true,
-            "representative": true
-        },
-        "entry": {
-            "specialist": true,
-            "analyst": true,
-            "assistant": true
-        }
-    },
-    "Bonus_Titles": {
-        "senior": 0.333,
-        "sr.": 0.333,
-        "director": 1,
-        "head": 0.667,
-        "manager": 0.333
     }
 }
