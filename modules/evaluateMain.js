@@ -1,19 +1,20 @@
 const EVAULATION_CHART = require("../db/evaluationChart.json")
 // modules
 const evaluateBySLandCS = require("./evaluateBySeniorityLevelAndCompanySize")
+const evaluateByJR = require("./evaluateByJobRole")
 
 // result
 const evaluatedContacts = []
 
 module.exports = contacts => {
     for (const contact of contacts) {
-        // title with only letters and numbers
         const washedTitle = washTitle(contact.Title)
-
         const seniorityLevel = getSeniorityLevel(washedTitle)
         const companySize = getCompanySize(contact["Company Size"])
 
-        let rate = evaluateBySLandCS(washedTitle, companySize)
+        const rateBySLandCS = evaluateBySLandCS(seniorityLevel, companySize)
+        const rateByJR = evaluateByJR(washedTitle, seniorityLevel, rateBySLandCS)
+        const rate = Math.round((rateBySLandCS + rateByJR) / 2)
 
         contact.Rate = rate
         evaluatedContacts.push(contact)
@@ -28,22 +29,9 @@ module.exports = contacts => {
 
 
 
-// Only keeps letters and numbers
+// returns string with onlu letters and numbers
 function washTitle(title) {
     return title.replace(/[^a-z0-9]/gi, '').toLowerCase();
-}
-
-// Evaluated from evaluations.json
-// returns one of the followings:
-// "small", "medium", "large"
-function getCompanySize(size) {
-    if (size < EVAULATION_CHART.Company_Size.small_max) {
-        return "small"
-    } else if (size < EVAULATION_CHART.Company_Size.large_min) {
-        return "medium"
-    } else {
-        return "large"
-    }
 }
 
 // returns seniority level
@@ -59,4 +47,17 @@ function getSeniorityLevel(title) {
     }
 
     return null
+}
+
+// Evaluated from evaluations.json
+// returns one of the followings:
+// "small", "medium", "large"
+function getCompanySize(size) {
+    if (size < EVAULATION_CHART.Company_Size.small_max) {
+        return "small"
+    } else if (size < EVAULATION_CHART.Company_Size.large_min) {
+        return "medium"
+    } else {
+        return "large"
+    }
 }
