@@ -12,7 +12,7 @@ The program evaluates half of rating by prioritizing right seniority level by co
 Executive > Senior > Mid > Mid-Entry > Entry
 - 50 - 1000 Employees 
 Senior > Executive > Mid > Mid-Entry > Entry
-= 1001+ Employees
+- 1001+ Employees
 Mid > Senior > Executive > Mid-Entry > Entry
 
 ## Getting Started
