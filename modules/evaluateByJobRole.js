@@ -1,3 +1,4 @@
+// JSON file
 const EVALUATION_CHAT = require("../db/evaluationChart.json")
 
 // returns rate by looking for certain key words in title

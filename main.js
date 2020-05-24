@@ -1,12 +1,13 @@
 // JSON file
 const contacts = require("./db/contactList.json")
-// Modules
-const evaluate = require("./modules/evaluateMain")
+// modules
+const rateContacts = require("./modules/evaluateMain")
 const makeJSON = require("./modules/makeJSON")
 
 module.exports = () => {
+    let ratedContacts = rateContacts(contacts)
+    ratedContacts = ratedContacts.sort((a,b) => b.Rate - a.Rate)
+    
     const fileName = "ratedContacts.json"
-    let ratedContacts = evaluate(contacts)
-    ratedContacts = ratedContacts.sort((a,b) => b.Rate - a.Rate) 
     makeJSON(fileName, ratedContacts)
 }
