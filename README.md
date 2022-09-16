@@ -1,4 +1,4 @@
-# Contacs Rating
+# Contacts Rating
 
 With given data of list of contacts that contain name, company size and title, this program will produce a new data file "ratedContacts.json" which will contain a rating per contact.
 
